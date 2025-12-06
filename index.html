@@ -1,0 +1,98 @@
+<script>
+// Bloquea click derecho en toda la página
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+</script>
+
+<style>
+/* Evita seleccionar y copiar */
+body, img {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Evita arrastrar imágenes para descargarlas */
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+/* Fondo general */
+body {
+    background-color: #000 !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* SCROLLBAR PERSONALIZADO */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #111; 
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #888, #000);
+    border-radius: 10px;
+    border: 2px solid #222;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #aaa, #000);
+}
+
+/* Contenedor centrado */
+#contenedor {
+    width: 480px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #111;
+    border: 2px solid #666;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #444;
+    text-align: center;
+    position: relative;
+}
+
+/* Imagen efecto transparencia */
+.imagen-efecto {
+    width: 100%;
+    border-radius: 6px;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+.imagen-efecto:hover {
+    opacity: 0.15;
+}
+
+/* FRASE ANIMADA */
+.frase {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #fff, #000, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: movimiento 3s linear infinite;
+}
+
+/* Animación del degradado */
+@keyframes movimiento {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+</style>
+
+<div id="contenedor">
+    <img class="imagen-efecto" src="https://xatimg.com/image/OmyxmlzEhdMs.jpg">
+    <div class="frase">fraudity</div>
+</div>
+
